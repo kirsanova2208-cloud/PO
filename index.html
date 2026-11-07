@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Причастный оборот: шпаргалка</title>
+<style>
+:root{color-scheme:light;--bg:linear-gradient(135deg,#6a1bf0,#3510a8);--s:#fff;--t:#1d1a2b;--p:#5b16e0;--on:#fff;--o:#ff9a57;--l:#c3f77e;--v:#ece4ff;--g:#f2f1f5;--in:#f7f6fa;--line:#e3dfee;--f:system-ui,-apple-system,sans-serif;--r:24px;--rb:30px;--up:uppercase}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:17px/1.5 var(--f);padding:20px 12px}
+#app{max-width:960px;margin:auto;background:var(--s);border-radius:calc(var(--r) + 4px);padding:clamp(16px,4vw,34px);color:var(--t)}
+#app *{color:inherit}#app h1{color:var(--hc,var(--p));font-size:clamp(40px,9vw,92px);line-height:.92;letter-spacing:-.05em;font-weight:900;text-transform:var(--up);margin:28px 0 16px;max-width:85%}
+#app h2{font-size:clamp(23px,4vw,34px);line-height:1.1;margin:8px 0}#app h3{font-size:20px;margin:0 0 8px}
+header{display:flex;justify-content:space-between;align-items:center;gap:10px;font:800 13px/1.3 var(--f);text-transform:uppercase}
+button{cursor:pointer;border:0;border-radius:var(--rb);padding:12px 18px;background:var(--p);color:var(--on)!important;font:700 15px var(--f);min-height:44px;margin:4px 4px 4px 0}
+button.a{background:var(--g);color:var(--t)!important}
+.hero{position:relative}.hero p{max-width:470px;font-weight:600}.blob{position:absolute;right:4%;bottom:0;width:100px;height:100px;background:radial-gradient(circle at 30% 25%,#fff9,var(--o) 60%);border-radius:45% 55% 62% 38%;box-shadow:14px 8px 0 var(--l)}
+.bento{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0}.tile{border-radius:var(--r);padding:22px}.tile>b{display:block;font-size:clamp(20px,3vw,30px);line-height:1.1}
+.or{background:var(--o);grid-row:span 2}.gr{background:var(--g)}.li{background:var(--l)}.pu{background:var(--p);color:var(--on)!important}.pu *{color:var(--on)!important}.wide{grid-column:1/-1}
+input,textarea{width:100%;font:inherit;border:2px solid var(--line);background:var(--in);color:var(--t)!important;border-radius:calc(var(--r)*.65);padding:13px 15px;margin:6px 0}
+.chips{display:flex;flex-wrap:wrap;gap:4px;margin:10px 0 16px}.chips button{min-height:36px;padding:8px 14px;font-size:13px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{display:flex;flex-direction:column;justify-content:space-between;text-align:left;min-height:140px;border-radius:calc(var(--r) - 2px);padding:18px;margin:0;color:var(--t)!important;font:800 19px/1.2 var(--f)}
+.card small{font:700 12px var(--f);opacity:.7}.card i{font-style:normal;text-align:right;font-size:24px}
+.card:nth-child(4n+1){background:var(--v)}.card:nth-child(4n+2){background:var(--g)}.card:nth-child(4n+3){background:var(--l)}.card:nth-child(4n){background:var(--o)}
+.pan{background:var(--g);border-radius:calc(var(--r) - 2px);padding:20px;margin:12px 0}.box{background:var(--v);border-radius:calc(var(--r)*.6);padding:13px 15px;margin:10px 0}
+.ok{background:#d9f7e3}.no{background:#ffe1d6}.ok,.no,.ok *,.no *{color:#1d1a2b!important}.o{display:block;width:100%;text-align:left;background:var(--in);color:var(--t)!important;border:2px solid var(--line);border-radius:calc(var(--r)*.6);font-weight:600}
+.pan button.a{background:var(--s)}.mut{font-size:13px;opacity:.65}.foot{text-align:center;font-size:12px;opacity:.6;margin-top:24px}
+@media(max-width:560px){body{padding:8px}.blob{width:60px;height:60px;opacity:.85}.hero p{max-width:72%}.tile{padding:15px}.card{min-height:120px;padding:13px;font-size:16px}}
+</style></head><body><main id="app"></main>
+<script>
+const TITLE="Причастный оборот",SUB="Найди свою ошибку, разберись по шагам и проверь себя.",CLS="7 класс";
+const DATA=[
+{cat:"Основы ПО",q:"Где границы ПО и что такое определяемое слово?",src:1,e:"<b>ПО = причастие + зависимые слова.</b> Определяемое слово — это существительное или местоимение, от которого к ПО задаётся вопрос.",ex:"Книга, (какая?) написанная автором.",st:["Найди причастие","Задай от него вопрос к другим словам","Выдели причастие и зависимые слова","Найди слово, от которого задал вопрос"],c:["Проверь: от определяемого слова к ПО должен идти вопрос","Убедись, что в ПО есть причастие"],help:["Причастие отвечает на вопросы: какой? какая? какое? какие?","Пример: (какая?) листва, устилающая землю. 'устилающая землю' — ПО, 'листва' — определяемое слово.","Частая ошибка: путать ПО с прилагательным. У прилагательного нет зависимых слов."],
+t:[{y:"choice",q:"Найди определяемое слово: Письмо, написанное бабушкой.",o:["Письмо","написанное","бабушкой"],a:0,h:"От какого слова задаётся вопрос к 'написанное'?",s:"Письмо (какое?) написанное."},
+{y:"input",q:"Выдели границы ПО: Солнце скрывавшееся за тучами появилось снова.",a:["скрывавшееся за тучами"],h:"Найди причастие и слова, от которых к нему задаются вопросы.",s:"Солнце (скрывавшееся за тучами) появилось снова."},
+{y:"choice",q:"Где причастный оборот: 'Рассветное небо было красивым'?",o:["Рассветное небо","Причастного оборота нет","было красивым"],a:1,h:"Есть ли зависимые слова у причастия 'рассветное'?",s:"Слово 'рассветное' — прилагательное, не причастие."},
+{y:"input",q:"Укажи определяемое слово: Удивлённые подарком, дети обрадовались.",a:["дети"],h:"Кто удивлённые?",s:"Дети (какие?) удивлённые."},
+{y:"open",q:"Придумай своё предложение с ПО и назови определяемое слово.",a:"Любое предложение, где есть причастие с зависимыми словами и существительное или местоимение, от которого задан вопрос.",h:"Вспомни пример: Книга, написанная автором.",s:"Например: Картина, нарисованная художником, висела на стене. 'Картина' — определяемое."}]},
+
+{cat:"Запятые при ПО",q:"Где ставить запятые при причастном обороте?",src:1,e:"<b>ПО обособляется запятыми, если стоит ПОСЛЕ определяемого слова.</b> Если ПО стоит ДО определяемого слова, запятые не ставятся.",ex:"Деревья, покрытые снегом, стояли в саду. (ПО после). Покрытые снегом деревья стояли в саду. (ПО до)",st:["Найди определяемое слово","Определи, где стоит ПО: до или после него","Если ПО после — выдели запятыми с двух сторон","Если ПО до — запятые не нужны"],c:["Нарисуй схему: [О], (ПО), или (ПО) О","Проверь, не является ли определяемое слово местоимением"],help:["Главное правило: ПО после определяемого = запятые.","Пример: Дом, построенный отцом, был крепким. (ПО после 'дом')","Частая ошибка: ставить запятую, когда ПО стоит перед определяемым словом: Построенный отцом дом был крепким (запятая не нужна)."],
+t:[{y:"choice",q:"Нужны ли запятые: 'Мальчик читающий интересную книгу улыбнулся'?",o:["Да, с двух сторон ПО","Нет, запятые не нужны","Только одна запятая"],a:0,h:"Где стоит ПО относительно слова 'мальчик'?",s:"ПО 'читающий интересную книгу' стоит после определяемого слова 'мальчик'."},
+{y:"input",q:"Расставь запятые: Ребёнок спавший на диване проснулся.",a:["Ребёнок, спавший на диване, проснулся."],h:"ПО 'спавший на диване' стоит после слова 'ребёнок'.",s:"Ребёнок, спавший на диване, проснулся."},
+{y:"choice",q:"Выбери верное предложение:",o:["Написанная учеником работа лежала на столе.","Написанная учеником, работа лежала на столе.","Написанная, учеником работа лежала на столе."],a:0,h:"ПО 'написанная учеником' стоит перед определяемым словом 'работа'.",s:"Если ПО перед определяемым словом, запятые не ставятся."},
+{y:"input",q:"Сколько запятых нужно: 'Мы вошли в комнату освещённую солнцем'?",a:["1","одна"],h:"ПО 'освещённую солнцем' стоит после 'комнату', но предложение заканчивается.",s:"Мы вошли в комнату, освещённую солнцем. (1 запятая, вторая заменяется точкой)"}]},
+
+{cat:"ПО и местоимение",q:"Почему запятая нужна, если ПО перед местоимением?",src:1,e:"<b>Если определяемое слово — личное местоимение (я, мы, ты, вы, он, она, оно, они), ПО и одиночное причастие обособляются всегда,</b> независимо от места расположения.",ex:"Он, уставший после работы, отдыхал. Удивлённая, она молчала.",st:["Проверь, выражено ли определяемое слово личным местоимением","Если да — ПО или одиночное причастие обособляется всегда","Поставь запятые с двух сторон","Если нет — применяй общее правило (до/после)"],c:["Подчеркни местоимение одной чертой","Убедись, что причастие относится именно к нему"],help:["Личные местоимения: я, ты, он, она, оно, мы, вы, они.","Пример: Я, уставший после школы, сразу лёг спать.","Частая ошибка: не выделять причастие, потому что оно стоит перед местоимением. Местоимение — исключение!"],
+t:[{y:"choice",q:"Нужны ли запятые: 'Он уставший после работы отдыхал'?",o:["Да, с двух сторон ПО","Нет, ПО стоит перед определяемым словом","Только одна запятая"],a:0,h:"Что является определяемым словом?",s:"Определяемое слово — местоимение 'он', поэтому ПО обособляется всегда."},
+{y:"input",q:"Расставь запятые: Мы уставшие после тренировки быстро уснули.",a:["Мы, уставшие после тренировки, быстро уснули."],h:"Определяемое слово — 'мы' (местоимение).",s:"Мы, уставшие после тренировки, быстро уснули."},
+{y:"choice",q:"Где ошибка?",o:["Она, пришедшая первой, получила приз.","Пришедшая первой она получила приз.","Пришедшая первой, она получила приз."],a:1,h:"Проверь правило для местоимений.",s:"Даже если ПО стоит перед местоимением 'она', запятые нужны: Пришедшая первой, она получила приз."},
+{y:"input",q:"Вставь пропущенные запятые: Они обрадованные новостью продолжали разговор.",a:["Они, обрадованные новостью, продолжали разговор."],h:"'Они' — это личное местоимение.",s:"Они, обрадованные новостью, продолжали разговор."}]},
+
+{cat:"Обстоятельственное значение",q:"Когда у ПО есть обстоятельственное значение?",src:1,e:"<b>Если ПО относится к подлежащему и его можно заменить придаточным со словами «так как» или «хотя»,</b> оно обособляется, даже если стоит перед определяемым словом.",ex:"Утомлённые долгой дорогой, туристы продолжили путь. (= хотя и были утомлённые)",st:["Проверь, относится ли ПО к подлежащему","Попробуй заменить ПО на придаточное со словами «так как» или «хотя»","Если замена возможна — ставь запятые","Если ПО относится к второстепенному члену — это чистое определение"],c:["Сделай замену на «так как» или «хотя»","Проверь, является ли определяемое слово подлежащим"],help:["Обстоятельственное значение бывает причины (так как) или уступки (хотя).","Пример причины: Посаженный заботливыми руками, овёс взошёл. (Так как был посажен...)","Частая ошибка: обособлять ПО, который относится к дополнению или обстоятельству."],
+t:[{y:"choice",q:"Почему обособлен ПО: 'Утомлённые подарком, дети обрадовались'?",o:["ПО стоит после определяемого слова","ПО имеет обстоятельственное значение причины","Определяемое слово — местоимение"],a:1,h:"Можно ли сказать 'так как были удивлены подарком'?",s:"Да, это значение причины, поэтому ПО обособляется, хотя стоит перед подлежащим."},
+{y:"input",q:"Расставь запятые: Утомлённые долгой дорогой туристы продолжили путь.",a:["Утомлённые долгой дорогой, туристы продолжили путь."],h:"Туристы продолжили путь, хотя и были утомлённые (уступка).",s:"Утомлённые долгой дорогой, туристы продолжили путь."},
+{y:"choice",q:"Нужны ли запятые: 'На столе лежала написанная учеником работа'?",o:["Да, всегда","Нет, это чистое определение","Да, потому что есть имя"],a:1,h:"Относится ли ПО к подлежащему 'работа' с значением причины или уступки?",s:"Нет, ПО выступает как чистое определение, запятые не нужны."},
+{y:"input",q:"Расставь запятые: Посаженный заботливыми руками овёс взошёл на окне.",a:["Посаженный заботливыми руками, овёс взошёл на окне."],h:"Овёс взошёл, так как был посажен заботливыми руками (причина).",s:"Посаженный заботливыми руками, овёс взошёл на окне."},
+{y:"open",q:"Придумай предложение, где ПО стоит перед подлежащим и имеет значение уступки.",a:"Любое предложение, где ПО обособляется перед подлежащим из-за значения уступки (например, со словами 'всё же' или 'хотя').",h:"Используй союз 'хотя' или слово 'всё же' для проверки.",s:"Например: Утомлённые дорогой, туристы всё же продолжили путь. (Хотя и были утомлённые)."}]}
+];
+const $=s=>document.querySelector(s),app=$("#app");let S={},F="Все",Q="";
+const nz=v=>String(v).toLowerCase().replace(/ё/g,"е").replace(/[−–]/g,"-").replace(/%/g,"").replace(/\s*([\/:+\-=×*])\s*/g,"$1").replace(/\s+/g," ").trim().replace(/,/g,".").replace(/[«»"']/g,"").replace(/[.!?…]+$/,"");
+const mix=a=>a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(p=>p[1]);
+const pl=(n,a,b,c)=>n+" "+(n%10==1&&n%100!=11?a:n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?b:c);
+const N=DATA.reduce((s,d)=>s+(d.t||[]).length,0),CATS=["Все",...new Set(DATA.map(d=>d.cat))];
+(()=>{const R=document.documentElement,cs=getComputedStyle(R),x=document.createElement("canvas").getContext("2d"),g=v=>cs.getPropertyValue(v).trim(),lum=c=>{x.fillStyle="#000";x.fillStyle=c;const h=x.fillStyle;if(h[0]!="#")return null;return[1,3,5].map(i=>{const v=parseInt(h.substr(i,2),16)/255;return v<=.03928?v/12.92:((v+.055)/1.055)**2.4}).reduce((s,v,i)=>s+v*[.2126,.7152,.0722][i],0)},cr=(a,b)=>{const p=lum(a),q=lum(b);return p==null||q==null?21:(Math.max(p,q)+.05)/(Math.min(p,q)+.05)},best=(bgs,cur)=>{const m=c=>Math.min(...bgs.map(b=>cr(c,b)));return m(cur)>=4.5?cur:["#1d1a2b","#ffffff"].sort((a,b)=>m(b)-m(a))[0]};R.style.setProperty("--on",best([g("--p")],g("--on")));R.style.setProperty("--t",best(["--s","--o","--l","--v","--g","--in"].map(g),g("--t")));if(cr(g("--p"),g("--s"))<3)R.style.setProperty("--hc",R.style.getPropertyValue("--t"))})();
+const hd=()=>`<header><div>🟠 ${TITLE}<br>${CLS}</div><button class="a" data-k="teach">Для учителя ↗</button></header>`;
+function home(){S={};app.innerHTML=hd()+`<div class="hero"><h1>${TITLE}</h1><p>${SUB}</p><div class="blob"></div></div>
+<div class="bento"><div class="tile or"><small>ТВОЯ БАЗА ЗНАНИЙ ✳</small><h2>Ошибаться можно.<br>Не разобраться — обидно!</h2></div><div class="tile gr"><b>${pl(DATA.length,"тема","темы","тем")}<br>в одном месте</b></div><div class="tile li"><b>${pl(N,"задание","задания","заданий")} ↗</b><p>Проверяй себя сразу</p></div><div class="tile pu wide"><b>Забыл правило? Найдём за минуту ✳</b></div></div>
+<h2>Выбери свою ошибку ↗</h2><input id="q" placeholder="Поиск по ошибкам и правилам…" aria-label="Поиск" value="${Q}"><div class="chips">${CATS.map(c=>`<button class="${c==F?"":"a"}" data-k="cat" data-c="${c}">${c}</button>`).join("")}</div><div class="cards" id="L"></div><div class="foot">${TITLE} · ${CLS}</div>`;list();$("#q").oninput=e=>{Q=e.target.value;list()}}
+function list(){const v=nz(Q);$("#L").innerHTML=DATA.map((d,i)=>(F=="Все"||d.cat==F)&&nz(d.cat+" "+d.q+" "+d.e+" "+d.ex).includes(v)?`<button class="card" data-k="item" data-i="${i}"><small>№ ${String(i+1).padStart(2,"0")} / ${d.cat}</small>${d.q}<i>↗</i></button>`:"").join("")||"<p>Ничего не нашлось. Попробуй другое слово.</p>"}
+function item(i){const d=DATA[i];S={i,hl:1};app.innerHTML=hd()+`<button class="a" data-k="home">← Ко всем темам</button>
+<div class="tile pu"><small>${d.cat} · ТЕМА ${i+1}</small><h2>${d.q}</h2></div>
+<div class="pan"><h3>01 / Главное правило</h3><p>${d.e}</p><div class="box"><b>Пример:</b> ${d.ex}</div></div>
+<div class="pan"><h3>02 / Порядок действий</h3><ol>${d.st.map(x=>`<li>${x}</li>`).join("")}</ol></div>
+<div class="pan"><h3>03 / Самопроверка</h3><ul>${d.c.map(x=>`<li>${x}</li>`).join("")}</ul></div>
+<div class="pan"><h3>04 / Если не получается</h3><div id="H"></div></div>
+${d.t&&d.t.length?`<div class="tile li"><h2>05 / Потренируйся!</h2><div id="T"><p>${pl(d.t.length,"задание","задания","заданий")} с проверкой</p><button data-k="start">Начать ↗</button></div></div>`:""}
+<p class="mut">Источник: ${d.src?"правило из учебника, присланное учителем":"общие знания, сверьте с учебником"}.</p>`;help();scrollTo(0,0)}
+function help(){const h=DATA[S.i].help;$("#H").innerHTML=h.slice(0,S.hl).map((x,j)=>`<div class="box"><b>Ступень ${j+1}</b><br>${x}</div>`).join("")+(S.hl<h.length?`<button class="a" data-k="more">Ещё подсказка ↗</button>`:`<p>Всё ещё сложно? Спроси учителя или одноклассника и покажи, на каком шаге застрял.</p>`)}
+function start(again){const t=DATA[S.i].t;S.list=again?mix(t):t.slice();S.k=0;S.ok=0;task()}
+function task(){const t=S.list[S.k];S.tries=0;S.done=0;let h=`<p><b>Задание ${S.k+1} / ${S.list.length}</b></p><h3>${t.q}</h3>`;
+if(t.y=="choice")h+=mix(t.o.map((x,j)=>j)).map(j=>`<button class="o" data-k="ch" data-j="${j}">${t.o[j]}</button>`).join("");
+else if(t.y=="input")h+=`<input id="A" placeholder="Твой ответ" autocomplete="off"><button data-k="chk">Проверить</button>`;
+else h+=`<textarea id="A" rows="3" placeholder="Напиши ответ"></textarea><button data-k="cmp">Сравнить с образцом</button>`;
+$("#T").innerHTML=h+`<div id="F"></div>`;const a=$("#A");if(a&&t.y=="input")a.onkeydown=e=>{if(e.key=="Enter")judge(a.value)}}
+const fb=(c,m)=>$("#F").innerHTML=`<div class="box ${c}">${m}</div>`;
+const next=()=>`<button data-k="next">${S.k+1<S.list.length?"Дальше ↗":"Итог ↗"}</button>`;
+function judge(v){const t=S.list[S.k];if(S.done)return;let ok;if(t.y=="choice")ok=+v===t.a;else{v=nz(v);if(!v)return;if(t.n){for(const k in t.n)if(nz(k)==v)return fb("",t.n[k])}ok=t.a.some(x=>nz(x)==v)}
+if(ok){if(!S.tries)S.ok++;S.done=1;fb("ok","<b>Верно!</b> "+t.s);$("#F").innerHTML+=next()}
+else if(++S.tries<2)fb("no","Не совсем. Подсказка: "+t.h);
+else{S.done=1;fb("no",`<b>Правильный ответ:</b> ${t.y=="choice"?t.o[t.a]:t.a[0]}. ${t.s}`);$("#F").innerHTML+=next()}}
+function done(){$("#T").innerHTML=`<h2>Готово! ✳</h2><p>С первой попытки: <b>${S.ok} из ${S.list.length}</b></p><button data-k="again">Повторить</button><button class="a" data-k="home">Другие темы</button>`}
+function teach(){app.innerHTML=hd()+`<button class="a" data-k="home">← Назад</button><div class="tile pu"><h2>Для учителя ✳</h2><p>Ответы ко всем заданиям</p></div>`+DATA.map((d,i)=>`<div class="pan"><h3>${i+1}. ${d.q}</h3><p class="mut">${d.src?"Правило учителя":"Общие знания — сверьте с учебником"}</p><ol>`+(d.t||[]).map(t=>`<li>${t.q}<br><b>Ответ: ${t.y=="choice"?t.o[t.a]:t.y=="open"?t.a:t.a.join("/")}</b><br><small>${t.s}</small></li>`).join("")+"</ol></div>").join("")}
+app.onclick=e=>{const b=e.target.closest("[data-k]");if(!b)return;const k=b.dataset.k,t=S.list&&S.list[S.k];
+if(k=="home")home();if(k=="teach")teach();if(k=="item")item(+b.dataset.i);if(k=="cat"){F=b.dataset.c;home()}if(k=="more"){S.hl++;help()}
+if(k=="start")start(0);if(k=="again")start(1);if(k=="ch")judge(b.dataset.j);if(k=="chk")judge($("#A").value);
+if(k=="cmp"&&$("#A").value.trim()){S.done=1;$("#F").innerHTML=`<div class="box">Образец: ${t.a}<br>${t.s}</div><button data-k="yes">Совпало</button><button class="a" data-k="no">Не совпало</button>`}
+if(k=="yes"||k=="no"){if(k=="yes")S.ok++;$("#F").innerHTML=`<div class="box">Образец: ${t.a}<br>${t.s}</div>`+next()}
+if(k=="next"){S.k++;S.k<S.list.length?task():done()}};
+home();
+</script></body></html>
